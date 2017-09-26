@@ -1,5 +1,8 @@
 public class validationClass {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 803346e5a1d77a26523756deaacf4c674cf499b8
     public static boolean isPositiveInteger(String a){
 
         int i;
@@ -42,12 +45,21 @@ public class validationClass {
 
         else if(a.charAt(0)!='-')
         {
+<<<<<<< HEAD
             for(i=0;i<a.length();i++)
                 if(!Character.isDigit(a.charAt(i)))
                     break;
 
             if(i==a.length())
                 valid = true;
+=======
+          for(i=0;i<a.length();i++)
+              if(!Character.isDigit(a.charAt(i)))
+                  break;
+
+          if(i==a.length())
+              valid = true;
+>>>>>>> 803346e5a1d77a26523756deaacf4c674cf499b8
         }
 
         return  valid;
@@ -62,7 +74,11 @@ public class validationClass {
                 decimal++;
                 decimalPlaceFinder=i;
             }
+<<<<<<< HEAD
             if(!Character.isDigit(a.charAt(i)) && decimal>1)
+=======
+            if(!Character.isDigit(a.charAt(i)) && i!=decimalPlaceFinder)
+>>>>>>> 803346e5a1d77a26523756deaacf4c674cf499b8
                 break;
         }
         if(i==(a.length()-1) && decimal==1)
@@ -70,7 +86,11 @@ public class validationClass {
 
         return valid;
     }
+<<<<<<< HEAD
     public static boolean isNegativeFloat(String a){
+=======
+    public static boolean isNeagtiveFloat(String a){
+>>>>>>> 803346e5a1d77a26523756deaacf4c674cf499b8
         int i=1, decimal=0, decimalPlaceFinder=0;
         boolean valid=false;
 
@@ -80,6 +100,7 @@ public class validationClass {
                     decimal++;
                     decimalPlaceFinder=i;
                 }
+<<<<<<< HEAD
                 if(!Character.isDigit(a.charAt(i)) && decimal>1)
                     break;
             }
@@ -131,4 +152,15 @@ public class validationClass {
 
         return valid;
     }
+=======
+                if(!Character.isDigit(a.charAt(i)) && i!=decimalPlaceFinder)
+                    break;
+            }
+            if(i==a.length()-1 && decimal==1)
+                valid = true;
+
+        return  valid;
+    }
+    
+>>>>>>> 803346e5a1d77a26523756deaacf4c674cf499b8
 }
