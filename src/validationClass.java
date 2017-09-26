@@ -1,10 +1,6 @@
 public class validationClass {
-    public static void main(String[] args) {
+    public static boolean isPositiveInteger(String a){
 
-    }
-
-    public static boolean isPositiveInteger(String a)
-    {
         int i;
         for(i=0;i<a.length();i++)
         {
@@ -16,7 +12,6 @@ public class validationClass {
         else
             return false;
     }
-
     public static boolean isNegativeInteger(String a) {
         int i=1;
 
@@ -29,9 +24,8 @@ public class validationClass {
         else
             return false;
     }
+    public static boolean isPositiveOrNegativeInteger(String a){
 
-    public static boolean isPositiveOrNegativeInteger(String a)
-    {
         int i;
         boolean valid=false;
 
@@ -57,6 +51,41 @@ public class validationClass {
 
         return  valid;
     }
+    public static boolean isPositiveFloat(String a){
+        int i=0, decimal=0, decimalPlaceFinder=0;
+        boolean valid=false;
 
-   // public static boolean isPositiveFloat
+        for(i=0;i<a.length();i++)
+        {
+            if(a.charAt(i)=='.') {
+                decimal++;
+                decimalPlaceFinder=i;
+            }
+            if(!Character.isDigit(a.charAt(i)) && i!=decimalPlaceFinder)
+                break;
+        }
+        if(i==(a.length()-1) && decimal==1)
+            valid = true;
+
+        return valid;
+    }
+    public static boolean isNeagtiveFloat(String a){
+        int i=1, decimal=0, decimalPlaceFinder=0;
+        boolean valid=false;
+
+        if(a.charAt(0)=='-')
+            for(i=1;i<a.length();i++){
+                if(a.charAt(i)=='.'){
+                    decimal++;
+                    decimalPlaceFinder=i;
+                }
+                if(!Character.isDigit(a.charAt(i)) && i!=decimalPlaceFinder)
+                    break;
+            }
+            if(i==a.length()-1 && decimal==1)
+                valid = true;
+
+        return  valid;
+    }
+    
 }
